@@ -1,10 +1,8 @@
-import CTextField from "../../components/inputs/CTextField"
+import CommentCard from "./comment-card"
 
 const Comments = () => {
   return (
-    <div>
-        <CTextField />
-    </div>
+    <CommentCard/> 
   )
 }
 

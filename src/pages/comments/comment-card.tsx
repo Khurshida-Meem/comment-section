@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const CommentCard = () => {
   return (
-    <div>CommentCard</div>
-  )
-}
+    <div className="flex justify-center">
+      <div></div>
+    </div>
+  );
+};
 
-export default CommentCard
+export default CommentCard;

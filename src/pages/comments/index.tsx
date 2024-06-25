@@ -1,9 +1,7 @@
-import CommentCard from "./comment-card"
+import AllComments from "./all-comments";
 
 const Comments = () => {
-  return (
-    <CommentCard/> 
-  )
-}
+  return <AllComments />;
+};
 
-export default Comments
+export default Comments;

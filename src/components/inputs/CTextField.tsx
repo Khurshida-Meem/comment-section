@@ -1,7 +1,6 @@
 import { FormControl, FormHelperText, OutlinedInput } from "@mui/material";
-import React from "react";
 
-const CTextField = () => {
+export const CTextField = () => {
   return (
     <FormControl sx={{ width: "25ch" }}>
       <OutlinedInput placeholder="Please enter text" />
@@ -9,5 +8,3 @@ const CTextField = () => {
     </FormControl>
   );
 };
-
-export default CTextField;

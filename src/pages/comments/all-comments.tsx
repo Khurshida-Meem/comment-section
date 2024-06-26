@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { dummyData } from "./dummyData";
 import CommentCard from "./comment-card";
 import { Divider, Grid } from "@mui/material";
+import { CTextField } from "../../components/inputs";
 
 const AllComments = () => {
   const [data, setData] = useState(dummyData);
@@ -29,6 +30,7 @@ const AllComments = () => {
               </Grid>
             </Grid>
           )}
+          <CTextField />
         </div>
       ))}
     </center>

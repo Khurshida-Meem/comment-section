@@ -3,8 +3,10 @@ import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import replyIcon from "../../assets/images/icon-reply.svg";
 import HorizontalElementLayout from "../../components/horizontal-element-layout";
+import deleteIcon from "../../assets/images/icon-delete.svg";
+import editIcon from "../../assets/images/icon-edit.svg";
 
-const CommentCard = ({ dto }: any) => {
+const CommentCard = ({ dto, currentUser }: any) => {
   return (
     <div style={{ maxWidth: "700px" }} className="bg-white pa3 br3 mt3">
       <Grid container>
@@ -44,11 +46,27 @@ const CommentCard = ({ dto }: any) => {
               />
             </div>
             <div>
-              <HorizontalElementLayout
-                isImage={true}
-                image={replyIcon}
-                textList={[{ text: "Reply", textClass: "ml1" }]}
-              />
+              {currentUser.username === dto?.user?.username ? (
+                <div className="flex">
+                  <HorizontalElementLayout
+                    containerClass="mr3"
+                    isImage={true}
+                    image={deleteIcon}
+                    textList={[{ text: "Delete", textClass: "ml1 " }]}
+                  />
+                  <HorizontalElementLayout
+                    isImage={true}
+                    image={editIcon}
+                    textList={[{ text: "Edit", textClass: "ml1" }]}
+                  />
+                </div>
+              ) : (
+                <HorizontalElementLayout
+                  isImage={true}
+                  image={replyIcon}
+                  textList={[{ text: "Reply", textClass: "ml1" }]}
+                />
+              )}
             </div>
           </div>
           <div>

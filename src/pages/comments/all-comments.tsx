@@ -11,7 +11,7 @@ const AllComments = () => {
     <center className="mt5">
       {data?.comments?.map((dto, idx) => (
         <div style={{ maxWidth: "700px" }} key={idx}>
-          <CommentCard dto={dto} />
+          <CommentCard dto={dto} currentUser={dummyData?.currentUser} />
           {dto?.replies?.length > 0 && (
             <Grid container>
               <Grid item md={1}>
@@ -24,7 +24,10 @@ const AllComments = () => {
               <Grid item md={11}>
                 {dto?.replies?.map((reply, replyidx) => (
                   <div key={replyidx}>
-                    <CommentCard dto={reply} />
+                    <CommentCard
+                      dto={reply}
+                      currentUser={dummyData?.currentUser}
+                    />
                   </div>
                 ))}
               </Grid>

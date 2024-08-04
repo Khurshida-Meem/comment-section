@@ -38,3 +38,7 @@ code {
 .grayish_blue {
   color: hsl(211, 10%, 45%);
 }
+
+.soft_red {
+  color: hsl(358, 79%, 66%);
+}

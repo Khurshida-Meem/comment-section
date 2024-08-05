@@ -18,7 +18,7 @@ const CommentCard = ({ dto, currentUser }: any) => {
                 sx={{ fontSize: "14px", color: "darkgray" }}
               />
             </div>
-            <div className="mv2 b blue">{dto?.score}</div>
+            <div className="mv2 b moderate_blue">{dto?.score}</div>
             <div>
               <RemoveIcon
                 className="pointer"
@@ -52,19 +52,23 @@ const CommentCard = ({ dto, currentUser }: any) => {
                     containerClass="mr3"
                     isImage={true}
                     image={deleteIcon}
-                    textList={[{ text: "Delete", textClass: "ml1 " }]}
+                    textList={[{ text: "Delete", textClass: "ml1 b soft_red" }]}
                   />
                   <HorizontalElementLayout
                     isImage={true}
                     image={editIcon}
-                    textList={[{ text: "Edit", textClass: "ml1" }]}
+                    textList={[
+                      { text: "Edit", textClass: "ml1 b moderate_blue" },
+                    ]}
                   />
                 </div>
               ) : (
                 <HorizontalElementLayout
                   isImage={true}
                   image={replyIcon}
-                  textList={[{ text: "Reply", textClass: "ml1" }]}
+                  textList={[
+                    { text: "Reply", textClass: "ml1 b moderate_blue" },
+                  ]}
                 />
               )}
             </div>

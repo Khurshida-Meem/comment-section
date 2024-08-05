@@ -42,3 +42,7 @@ code {
 .soft_red {
   color: hsl(358, 79%, 66%);
 }
+
+.pale_red {
+  color: hsl(357, 100%, 86%);
+}

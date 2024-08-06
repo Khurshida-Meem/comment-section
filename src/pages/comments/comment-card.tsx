@@ -92,7 +92,12 @@ const CommentCard = ({ dto, currentUser }: any) => {
             </div>
           </div>
           <div>
-            <p className="mt-2 ml-3 light_primary">{dto?.content}</p>
+            <p className="mt-1 ml-3 light_primary">
+              <span className="primary font-semibold">
+                {dto?.replyingTo && `@${dto?.replyingTo}`}
+              </span>{" "}
+              {dto?.content}
+            </p>
           </div>
         </Grid>
       </Grid>

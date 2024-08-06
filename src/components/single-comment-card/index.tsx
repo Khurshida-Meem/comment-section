@@ -6,7 +6,7 @@ import HorizontalElementLayout from "../../components/horizontal-element-layout"
 import deleteIcon from "../../assets/images/icon-delete.svg";
 import editIcon from "../../assets/images/icon-edit.svg";
 
-const CommentCard = ({ dto, currentUser }: any) => {
+const SingleCommentCard = ({ dto, currentUser }: any) => {
   return (
     <div style={{ maxWidth: "700px" }} className="bg-white p-3 mt-3">
       <Grid
@@ -111,4 +111,4 @@ const CommentCard = ({ dto, currentUser }: any) => {
   );
 };
 
-export default CommentCard;
+export default SingleCommentCard;

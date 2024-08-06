@@ -16,11 +16,11 @@ const CommentCard = ({ dto, currentUser }: any) => {
         alignItems="center"
       >
         <Grid item md={1}>
-          <div style={{ maxWidth: "35px" }} className="light_bg py-2">
+          <div style={{ maxWidth: "35px" }} className="light_bg rounded-lg">
             <div>
               <AddIcon sx={{ fontSize: "14px", color: "darkgray" }} />
             </div>
-            <div className="my-1 primary">{dto?.score}</div>
+            <div className="my-1 primary font-semibold">{dto?.score}</div>
             <div>
               <RemoveIcon sx={{ fontSize: "14px", color: "darkgray" }} />
             </div>
@@ -30,6 +30,7 @@ const CommentCard = ({ dto, currentUser }: any) => {
           <div className="flex justify-between items-center">
             <div className="flex items-center">
               <HorizontalElementLayout
+                containerClass="ml-3"
                 isAvatar={true}
                 avatar={
                   <Avatar
@@ -83,7 +84,7 @@ const CommentCard = ({ dto, currentUser }: any) => {
             </div>
           </div>
           <div>
-            <p className="mt-2">{dto?.content}</p>
+            <p className="mt-2 ml-3">{dto?.content}</p>
           </div>
         </Grid>
       </Grid>

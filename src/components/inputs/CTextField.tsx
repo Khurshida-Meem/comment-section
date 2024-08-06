@@ -34,9 +34,11 @@ export const CTextField = ({
           placeholder="Enter Comment"
           size={size}
           multiline={isMultiLine}
+          rows={isMultiLine ? 3 : 1}
           sx={{
             "& .MuiOutlinedInput-notchedOutline": {
               borderColor: "var(--primary)",
+              borderRadius: "6px",
             },
             "&:hover .MuiOutlinedInput-notchedOutline": {
               borderColor: "var(--light-primary)",

@@ -5,9 +5,8 @@ import replyIcon from "../../assets/images/icon-reply.svg";
 import HorizontalElementLayout from "../horizontal-element-layout";
 import deleteIcon from "../../assets/images/icon-delete.svg";
 import editIcon from "../../assets/images/icon-edit.svg";
-import CreateComment from "../create-comment";
 
-const SingleComment = ({ dto, currentUser }: any) => {
+const SingleComment = ({ dto, currentUser, handleSetReplyDto }: any) => {
   return (
     <>
       <div
@@ -102,6 +101,9 @@ const SingleComment = ({ dto, currentUser }: any) => {
                   </div>
                 ) : (
                   <HorizontalElementLayout
+                    onClick={() => {
+                      handleSetReplyDto(dto);
+                    }}
                     containerClass="pointer"
                     isImage={true}
                     image={replyIcon}
@@ -126,7 +128,6 @@ const SingleComment = ({ dto, currentUser }: any) => {
           </Grid>
         </Grid>
       </div>
-      <CreateComment title="Send" />
     </>
   );
 };

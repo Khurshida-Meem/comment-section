@@ -2,9 +2,18 @@ import React, { useState } from "react";
 import { dummyData } from "./dummyData";
 import { Divider, Grid } from "@mui/material";
 import SingleComment from "../../components/single-comment";
+import CreateComment from "../../components/create-comment";
 
 const AllComments = () => {
   const [data, setData] = useState(dummyData);
+  const [replyDto, setReplyDto] = useState<any>(null);
+  const onSubmit = (data: any) => {
+    console.log(data);
+  };
+
+  const handleSetReplyDto = (dto: any) => {
+    setReplyDto(dto);
+  };
 
   return (
     <center className="mt-8">
@@ -26,14 +35,25 @@ const AllComments = () => {
                     <SingleComment
                       dto={reply}
                       currentUser={dummyData?.currentUser}
+                      handleSetReplyDto={handleSetReplyDto}
                     />
                   </div>
                 ))}
               </Grid>
             </Grid>
           )}
+          {replyDto && replyDto?.user?.userName === dto?.user?.username && (
+            <CreateComment
+              onSubmit={onSubmit}
+              userImg={data?.currentUser?.image?.png}
+              title="Send"
+            />
+          )}
         </div>
       ))}
+      <div style={{ maxWidth: "700px" }}>
+        <CreateComment userImg={data?.currentUser?.image?.png} title="Send" />
+      </div>
     </center>
   );
 };

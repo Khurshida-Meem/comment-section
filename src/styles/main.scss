@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital@0;1&display=swap");
+@import "./index";
 
 * {
   margin: 0;
@@ -7,8 +8,7 @@
 
 body {
   margin: 0;
-  font-family: "Rubik", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
-    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #eff0f3;
@@ -20,29 +20,33 @@ code {
 }
 
 .white_bg {
-  background-color: white;
+  background-color: $white;
 }
 
 .light_bg {
   background-color: #f1f1f1;
 }
 
-.moderate_blue {
-  color: hsl(238, 40%, 52%);
+.primary {
+  color: $primary;
 }
 
-.dark_blue {
-  color: hsl(212, 24%, 26%);
+.dark_primary {
+  color: $dark-primary;
 }
 
-.grayish_blue {
-  color: hsl(211, 10%, 45%);
+.light_primary {
+  color: $light-primary;
 }
 
-.soft_red {
-  color: hsl(358, 79%, 66%);
+.error_primary {
+  color: $error-primary;
 }
 
-.pale_red {
-  color: hsl(357, 100%, 86%);
+.error_light {
+  color: $error-light;
+}
+
+.pointer {
+  cursor: pointer;
 }

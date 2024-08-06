@@ -3,12 +3,19 @@ import { dummyData } from "./dummyData";
 import CommentCard from "./comment-card";
 import { Divider, Grid } from "@mui/material";
 import { CTextField } from "../../components/inputs";
+import { useForm } from "react-hook-form";
 
 const AllComments = () => {
   const [data, setData] = useState(dummyData);
 
+  const { handleSubmit, control } = useForm();
+
+  const onSubmit = (data: any) => {
+    console.log(data);
+  };
+
   return (
-    <center className="mt5">
+    <center className="mt-8">
       {data?.comments?.map((dto, idx) => (
         <div style={{ maxWidth: "700px" }} key={idx}>
           <CommentCard dto={dto} currentUser={dummyData?.currentUser} />
@@ -33,7 +40,12 @@ const AllComments = () => {
               </Grid>
             </Grid>
           )}
-          <CTextField />
+          <CTextField
+            name="field"
+            control={control}
+            label="Last Name"
+            rules={{ required: "Last name is required" }}
+          />
         </div>
       ))}
     </center>

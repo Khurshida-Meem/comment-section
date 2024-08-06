@@ -25,7 +25,7 @@ const HorizontalElementLayout = (props: propType) => {
     isImage = false,
     isIcon = false,
     textList = [],
-    iconClass = "mr1",
+    iconClass = "",
     onClick,
     containerClass = "",
     containerStyle = {},
@@ -35,7 +35,7 @@ const HorizontalElementLayout = (props: propType) => {
     <div
       className={`flex items-center ${containerClass}`}
       onClick={onClick}
-      style={{ ...containerStyle, cursor: "pointer" }}
+      style={{ ...containerStyle }}
     >
       {isImage && (
         <img

@@ -18,11 +18,17 @@ const CommentCard = ({ dto, currentUser }: any) => {
         <Grid item md={1}>
           <div style={{ maxWidth: "35px" }} className="light_bg rounded-lg">
             <div>
-              <AddIcon sx={{ fontSize: "14px", color: "darkgray" }} />
+              <AddIcon
+                className="pointer"
+                sx={{ fontSize: "14px", color: "darkgray" }}
+              />
             </div>
             <div className="my-1 primary font-semibold">{dto?.score}</div>
             <div>
-              <RemoveIcon sx={{ fontSize: "14px", color: "darkgray" }} />
+              <RemoveIcon
+                className="pointer"
+                sx={{ fontSize: "14px", color: "darkgray" }}
+              />
             </div>
           </div>
         </Grid>

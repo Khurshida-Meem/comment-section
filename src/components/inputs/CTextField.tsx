@@ -1,4 +1,4 @@
-import { TextField } from "@mui/material";
+import { OutlinedInput } from "@mui/material";
 import { Control, Controller, FieldValues } from "react-hook-form";
 
 interface FormInputProps {
@@ -7,6 +7,8 @@ interface FormInputProps {
   label?: string;
   defaultValue?: string;
   rules?: object;
+  size?: "medium" | "small";
+  isMultiLine?: true | false;
 }
 
 export const CTextField = ({
@@ -15,6 +17,8 @@ export const CTextField = ({
   label,
   defaultValue,
   rules,
+  size = "medium",
+  isMultiLine = false,
 }: FormInputProps) => {
   return (
     <Controller
@@ -23,13 +27,26 @@ export const CTextField = ({
       defaultValue={defaultValue}
       rules={rules}
       render={({ field, fieldState: { error } }) => (
-        <TextField
+        <OutlinedInput
           {...field}
-          label={label}
-          variant="outlined"
           error={!!error}
-          helperText={error ? error.message : ""}
           fullWidth
+          placeholder="Enter Comment"
+          size={size}
+          multiline={isMultiLine}
+          sx={{
+            "& .MuiOutlinedInput-notchedOutline": {
+              borderColor: "var(--primary)",
+            },
+            "&:hover .MuiOutlinedInput-notchedOutline": {
+              borderColor: "var(--light-primary)",
+            },
+            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+              border: "1px solid var(--primary)",
+            },
+            color: "var(--primary)",
+            fontSize: "14px",
+          }}
         />
       )}
     />

@@ -10,3 +10,15 @@ $light-grayish-blue: hsl(239, 57%, 85%);
 $light-gray: hsl(223, 19%, 93%);
 $very-light-gray: hsl(228, 33%, 97%);
 $white: hsl(0, 0%, 100%);
+
+:root {
+  --primary: #{$primary};
+  --dark-primary: #{$dark-primary};
+  --light-primary: #{$light-primary};
+  --error-primary: #{$error-primary};
+  --error-light: #{$error-light};
+  --light-grayish-blue: #{$light-grayish-blue};
+  --light-gray: #{$light-gray};
+  --very-light-gray: #{$very-light-gray};
+  --white: #{$white};
+}

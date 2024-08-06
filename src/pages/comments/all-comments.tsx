@@ -1,18 +1,10 @@
 import React, { useState } from "react";
 import { dummyData } from "./dummyData";
 import { Divider, Grid } from "@mui/material";
-import { CTextField } from "../../components/inputs";
-import { useForm } from "react-hook-form";
 import SingleComment from "../../components/single-comment";
 
 const AllComments = () => {
   const [data, setData] = useState(dummyData);
-
-  const { handleSubmit, control } = useForm();
-
-  const onSubmit = (data: any) => {
-    console.log(data);
-  };
 
   return (
     <center className="mt-8">
@@ -40,12 +32,6 @@ const AllComments = () => {
               </Grid>
             </Grid>
           )}
-          <CTextField
-            name="field"
-            control={control}
-            label="Last Name"
-            rules={{ required: "Last name is required" }}
-          />
         </div>
       ))}
     </center>

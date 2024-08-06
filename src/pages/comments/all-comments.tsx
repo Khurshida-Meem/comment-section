@@ -3,7 +3,7 @@ import { dummyData } from "./dummyData";
 import { Divider, Grid } from "@mui/material";
 import { CTextField } from "../../components/inputs";
 import { useForm } from "react-hook-form";
-import SingleCommentCard from "../../components/single-comment-card";
+import SingleComment from "../../components/single-comment";
 
 const AllComments = () => {
   const [data, setData] = useState(dummyData);
@@ -18,7 +18,7 @@ const AllComments = () => {
     <center className="mt-8">
       {data?.comments?.map((dto, idx) => (
         <div style={{ maxWidth: "700px" }} key={idx}>
-          <SingleCommentCard dto={dto} currentUser={dummyData?.currentUser} />
+          <SingleComment dto={dto} currentUser={dummyData?.currentUser} />
           {dto?.replies?.length > 0 && (
             <Grid container>
               <Grid item md={1}>
@@ -31,7 +31,7 @@ const AllComments = () => {
               <Grid item md={11}>
                 {dto?.replies?.map((reply, replyidx) => (
                   <div key={replyidx}>
-                    <SingleCommentCard
+                    <SingleComment
                       dto={reply}
                       currentUser={dummyData?.currentUser}
                     />

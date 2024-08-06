@@ -2,11 +2,11 @@ import { Avatar, Grid } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import replyIcon from "../../assets/images/icon-reply.svg";
-import HorizontalElementLayout from "../../components/horizontal-element-layout";
+import HorizontalElementLayout from "../horizontal-element-layout";
 import deleteIcon from "../../assets/images/icon-delete.svg";
 import editIcon from "../../assets/images/icon-edit.svg";
 
-const SingleCommentCard = ({ dto, currentUser }: any) => {
+const SingleComment = ({ dto, currentUser }: any) => {
   return (
     <div style={{ maxWidth: "700px" }} className="bg-white p-3 mt-3">
       <Grid
@@ -111,4 +111,4 @@ const SingleCommentCard = ({ dto, currentUser }: any) => {
   );
 };
 
-export default SingleCommentCard;
+export default SingleComment;

@@ -42,9 +42,17 @@ const CommentCard = ({ dto, currentUser }: any) => {
                 textList={[
                   {
                     text: dto?.user?.username,
-                    textClass: "font-semibold my-2 mx-3",
+                    textClass: "font-semibold my-2 mx-3 dark_primary",
                   },
-                  { text: dto?.createdAt, textClass: "" },
+                  {
+                    text:
+                      currentUser.username === dto?.user?.username ? "You" : "",
+                    textClass:
+                      currentUser.username === dto?.user?.username
+                        ? "mr-3 bg_primary text-white text-xs font-semibold rounded px-2 py-0.5"
+                        : "",
+                  },
+                  { text: dto?.createdAt, textClass: "text-xs light_primary" },
                 ]}
               />
             </div>
@@ -84,7 +92,7 @@ const CommentCard = ({ dto, currentUser }: any) => {
             </div>
           </div>
           <div>
-            <p className="mt-2 ml-3">{dto?.content}</p>
+            <p className="mt-2 ml-3 light_primary">{dto?.content}</p>
           </div>
         </Grid>
       </Grid>

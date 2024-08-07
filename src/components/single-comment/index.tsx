@@ -6,7 +6,7 @@ import HorizontalElementLayout from "../horizontal-element-layout";
 import deleteIcon from "../../assets/images/icon-delete.svg";
 import editIcon from "../../assets/images/icon-edit.svg";
 
-const SingleComment = ({ dto, currentUser, handleSetReplyDto }: any) => {
+const SingleComment = ({ dto, currentUser, setReplyDto }: any) => {
   return (
     <>
       <div
@@ -102,7 +102,7 @@ const SingleComment = ({ dto, currentUser, handleSetReplyDto }: any) => {
                 ) : (
                   <HorizontalElementLayout
                     onClick={() => {
-                      handleSetReplyDto(dto);
+                      setReplyDto(dto);
                     }}
                     containerClass="pointer"
                     isImage={true}

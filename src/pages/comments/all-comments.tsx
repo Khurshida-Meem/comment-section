@@ -19,7 +19,11 @@ const AllComments = () => {
     <center className="mt-8">
       {data?.comments?.map((dto, idx) => (
         <div style={{ maxWidth: "700px" }} key={idx}>
-          <SingleComment dto={dto} currentUser={dummyData?.currentUser} />
+          <SingleComment
+            setReplyDto={setReplyDto}
+            dto={dto}
+            currentUser={dummyData?.currentUser}
+          />
           {dto?.replies?.length > 0 && (
             <Grid container>
               <Grid item md={1}>
@@ -35,7 +39,7 @@ const AllComments = () => {
                     <SingleComment
                       dto={reply}
                       currentUser={dummyData?.currentUser}
-                      handleSetReplyDto={handleSetReplyDto}
+                      setReplyDto={setReplyDto}
                     />
                   </div>
                 ))}

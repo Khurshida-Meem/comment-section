@@ -1,10 +1,12 @@
+import { DataContext } from "./contexts";
 import Comments from "./pages/comments";
+import { dummyData } from "./pages/comments/dummyData";
 
 function App() {
   return (
-    <div>
+    <DataContext.Provider value={dummyData}>
       <Comments />
-    </div>
+    </DataContext.Provider>
   );
 }
 

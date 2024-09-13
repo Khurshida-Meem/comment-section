@@ -41,16 +41,14 @@ const AllComments = () => {
                     />
                   </div>
                 ))}
-                {replyDto &&
-                  (dto?.replies?.length
-                    ? replyDto?.commentHeaderId === dto?.id
-                    : replyDto?.id === dto?.id) && (
-                    <CreateComment
-                      onSubmit={onSubmit}
-                      userImg={data?.currentUser?.image?.png}
-                      title="Send"
-                    />
-                  )}
+
+                {replyDto && replyDto?.id === dto?.id && (
+                  <CreateComment
+                    onSubmit={onSubmit}
+                    userImg={data?.currentUser?.image?.png}
+                    title="Send"
+                  />
+                )}
               </Grid>
             </Grid>
           )}

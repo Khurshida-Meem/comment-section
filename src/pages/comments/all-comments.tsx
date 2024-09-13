@@ -22,17 +22,15 @@ const AllComments = () => {
             dto={dto}
             currentUser={dummyData?.currentUser}
           />
-          {dto?.replies?.length > 0 && (
-            <Grid container>
-              <Grid item md={1}>
-                <Divider
-                  sx={{ mx: 3 }}
-                  orientation="vertical"
-                  variant="middle"
-                />
-              </Grid>
-              <Grid item md={11}>
-                {dto?.replies?.map((reply, replyidx) => (
+
+          <Grid container>
+            <Grid item md={1}>
+              <Divider sx={{ mx: 3 }} orientation="vertical" variant="middle" />
+            </Grid>
+
+            <Grid item md={11}>
+              {dto?.replies?.length > 0 &&
+                dto?.replies?.map((reply, replyidx) => (
                   <div key={replyidx}>
                     <SingleComment
                       dto={reply}
@@ -41,17 +39,15 @@ const AllComments = () => {
                     />
                   </div>
                 ))}
-
-                {replyDto && replyDto?.id === dto?.id && (
-                  <CreateComment
-                    onSubmit={onSubmit}
-                    userImg={data?.currentUser?.image?.png}
-                    title="Send"
-                  />
-                )}
-              </Grid>
+              {replyDto && replyDto?.id === dto?.id && (
+                <CreateComment
+                  onSubmit={onSubmit}
+                  userImg={data?.currentUser?.image?.png}
+                  title="Send"
+                />
+              )}
             </Grid>
-          )}
+          </Grid>
         </div>
       ))}
     </center>

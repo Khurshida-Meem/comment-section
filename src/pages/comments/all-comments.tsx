@@ -13,10 +13,6 @@ const AllComments = () => {
     console.log(data);
   };
 
-  const handleSetReplyDto = (dto: any) => {
-    setReplyDto(dto);
-  };
-
   return (
     <center className="mt-8">
       {data?.comments?.map((dto, idx: number) => (

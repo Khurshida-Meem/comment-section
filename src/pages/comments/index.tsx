@@ -7,12 +7,21 @@ const Comments = () => {
   // const [data, setData] = useState(dummyData);
 
   const data = useContext(DataContext);
+
+  const onSubmit = (data: any) => {
+    console.log(data);
+  };
+
   return (
     <>
       <AllComments />
       <center>
         <div style={{ maxWidth: "700px" }}>
-          <CreateComment userImg={data?.currentUser?.image?.png} title="Send" />
+          <CreateComment
+            userImg={data?.currentUser?.image?.png}
+            title="Send"
+            onSubmit={onSubmit}
+          />
         </div>
       </center>
     </>

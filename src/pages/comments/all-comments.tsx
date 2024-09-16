@@ -9,8 +9,9 @@ import { MainData } from "../../dataTypes";
 const AllComments = () => {
   const data: MainData = useContext(DataContext);
   const [replyDto, setReplyDto] = useState<any>(null);
-  const onSubmit = (data: any) => {
-    console.log(data);
+  const onSubmit = (reply: any) => {
+    const payload = {};
+    console.log(reply);
   };
 
   console.log(replyDto);

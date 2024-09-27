@@ -10,7 +10,9 @@ const AllComments = () => {
   const data: MainData = useContext(DataContext);
   const [replyDto, setReplyDto] = useState<any>(null);
   const onSubmit = (reply: any) => {
-    const payload = {};
+    const payload = {
+      
+    };
     console.log(reply);
   };
 
